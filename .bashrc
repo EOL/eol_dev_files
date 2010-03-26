@@ -99,7 +99,7 @@ IN="\[\033[0m\]"
 PS1='\[\033[01;34m\]\w\[\033[00m\]\$$IN '
 export PS1="$HI\u $HI\h $HI\w$HI $IN"
 
-if [ "$TERM" != "dumb" ]; then
+if [ -f $HOME/.dir_colors ]; then
     export LS_OPTIONS='--color=auto'
     eval `dircolors ~/.dir_colors`
 fi
