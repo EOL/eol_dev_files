@@ -1,0 +1,41 @@
+term xterm-color
+defutf8 on
+defflow off
+vbell off
+autodetach on
+startup_message off
+defscrollback 30000 
+escape ^xX
+
+# terminfo and termcap for nice 256 color terminal
+# allow bold colors - necessary for some reason
+attrcolor b ".I"
+# tell screen how to set colors. AB = background, AF=foreground
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+
+# erase background with current bg color
+defbce "on"
+
+# make the shell in every window a login shell
+#shell -$SHELL   
+#shell bash
+################
+#
+# default windows, change to suit your needs
+#
+
+screen -t vim       1  
+screen -t tests     2 
+screen -t server    3 
+screen -t mysql     4 mysql
+screen -t console   5 
+screen -t bash      6
+screen -t log       7 tail -F log/development.log
+select 1
+
+#########
+# Hard status line hack
+#
+hardstatus alwaysignore
+hardstatus alwayslastline
+hardstatus string '%{Yk}%-w%{.Yk}%n %t%{-}%+w %=%{.w} %{rk}%H %{gk}%c %{yk}%M%d'
