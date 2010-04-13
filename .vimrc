@@ -51,6 +51,9 @@ nmap <unique> <Leader>s ysiW
 
 map R :!ruby % <cr>
 map S :!spec % <cr>
+map ~ :tabnew <cr>
+map } :tabn <cr>
+map { :tabp <cr>
 "map <silent> <Leader>P :Project<CR>
 "map L :!ispell % <cr>
 "map K :!ispell <cr>
