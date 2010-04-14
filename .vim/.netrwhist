@@ -1,6 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/dimus/code/biodiversity/lib'
-let g:netrw_dirhist_2='/home/dimus/code/biodiversity/lib/biodiversity'
-let g:netrw_dirhist_3='/home/dimus/code/biodiversity/lib/biodiversity/parser'
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/dimus/code/biodiversity'
+let g:netrw_dirhist_2='/home/dimus/code/biodiversity/spec'
+let g:netrw_dirhist_3='/home/dimus/code/biodiversity/spec/parser'
 let g:netrw_dirhist_4='/home/dimus/code/biodiversity'
+let g:netrw_dirhist_5='/home/dimus/code/biodiversity/lib'
+let g:netrw_dirhist_6='/home/dimus/code/biodiversity/lib/biodiversity'
+let g:netrw_dirhist_7='/home/dimus/code/biodiversity/lib/biodiversity/parser'
