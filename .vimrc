@@ -41,6 +41,8 @@ set vb "makes visual bell instead of sound
 "to turn synthax color on
 "set term=builtin_beos-ansi
 
+filetype plugin indent on
+
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
 
@@ -79,12 +81,12 @@ if has("autocmd")
  autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
  autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
  autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
- autocmd User Rails Rcommand spm spec/models -glob=**/* -suffix=_spec.rb -default=model()
- autocmd User Rails Rcommand sph spec/helpers -glob=**/* -suffix=_helper_spec.rb -default=controller()
- autocmd User Rails Rcommand spc spec/controllers -glob=**/* -suffix=_controller_spec.rb -default=controller()
- autocmd User Rails Rcommand spv spec/views -glob=**/* -suffix=_view_spec.rb
- autocmd User Rails Rcommand spf spec/fixtures -glob=**/* -suffix=.yml
- autocmd User Rails Rcommand cfg config -glob=**/* -suffix=.rb
+ autocmd User Rails Rnavcommand spm spec/models -glob=**/* -suffix=_spec.rb -default=model()
+ autocmd User Rails Rnavcommand sph spec/helpers -glob=**/* -suffix=_helper_spec.rb -default=controller()
+ autocmd User Rails Rnavcommand spc spec/controllers -glob=**/* -suffix=_controller_spec.rb -default=controller()
+ autocmd User Rails Rnavcommand spv spec/views -glob=**/* -suffix=_view_spec.rb
+ autocmd User Rails Rnavcommand spf spec/fixtures -glob=**/* -suffix=.yml
+ autocmd User Rails Rnavcommand cfg config -glob=**/* -suffix=.rb
 
 
  augroup cprog
@@ -216,6 +218,7 @@ endfunction
 
 command! -nargs=1 Find :call Find("<args>")
 command W w !sudo tee % >/dev/null
+command -bar -nargs=1 OpenURL :!open <args>
 
 function Openf()
   edit <cfile>
