@@ -79,12 +79,12 @@ if has("autocmd")
  autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
  autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
  autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
- autocmd User Rails Rcommand spm spec/models -glob=**/* -suffix=_spec.rb -default=model()
- autocmd User Rails Rcommand sph spec/helpers -glob=**/* -suffix=_helper_spec.rb -default=controller()
- autocmd User Rails Rcommand spc spec/controllers -glob=**/* -suffix=_controller_spec.rb -default=controller()
- autocmd User Rails Rcommand spv spec/views -glob=**/* -suffix=_view_spec.rb
- autocmd User Rails Rcommand spf spec/fixtures -glob=**/* -suffix=.yml
- autocmd User Rails Rcommand cfg config -glob=**/* -suffix=.rb
+ " autocmd User Rails Rcommand spm spec/models -glob=**/* -suffix=_spec.rb -default=model()
+ " autocmd User Rails Rcommand sph spec/helpers -glob=**/* -suffix=_helper_spec.rb -default=controller()
+ " autocmd User Rails Rcommand spc spec/controllers -glob=**/* -suffix=_controller_spec.rb -default=controller()
+ " autocmd User Rails Rcommand spv spec/views -glob=**/* -suffix=_view_spec.rb
+ " autocmd User Rails Rcommand spf spec/fixtures -glob=**/* -suffix=.yml
+ " autocmd User Rails Rcommand cfg config -glob=**/* -suffix=.rb
 
 
  augroup cprog
