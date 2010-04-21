@@ -38,3 +38,7 @@ alias grdebug='git grep -n --color -l "^ *debugger"| grep -v vendor'
 alias epopulate="rake truncate; rake scenarios:load NAME=bootstrap"
 alias gni="cd ~/code/gni;clear"
 alias sp="./script/spec"
+
+if [ -f $HOME/.bash_aliases_local ]; then
+  source $HOME/.bash_aliases_local
+fi
