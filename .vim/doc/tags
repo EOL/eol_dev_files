@@ -1,3 +1,4 @@
+'TailMinusF_Height'	tailminusf.txt	/*'TailMinusF_Height'*
 :MkVimball	pi_vimball.txt	/*:MkVimball*
 :RmVimball	pi_vimball.txt	/*:RmVimball*
 :TComment	tComment.txt	/*:TComment*
@@ -5,12 +6,14 @@
 :TCommentBlock	tComment.txt	/*:TCommentBlock*
 :TCommentInline	tComment.txt	/*:TCommentInline*
 :TCommentRight	tComment.txt	/*:TCommentRight*
+:Tail	tailminusf.txt	/*:Tail*
 :UseVimball	pi_vimball.txt	/*:UseVimball*
 :VimballList	pi_vimball.txt	/*:VimballList*
 AND	dbext.txt	/*AND*
 DBI	dbext.txt	/*DBI*
 ODBC	dbext.txt	/*ODBC*
 TCommentDefineType()	tComment.txt	/*TCommentDefineType()*
+TailMinusF.txt	tailminusf.txt	/*TailMinusF.txt*
 Vimball-copyright	pi_vimball.txt	/*Vimball-copyright*
 asa	dbext.txt	/*asa*
 ase	dbext.txt	/*ase*
@@ -254,6 +257,9 @@ tComment-Key-Bindings	tComment.txt	/*tComment-Key-Bindings*
 tComment-Usage	tComment.txt	/*tComment-Usage*
 tComment-commands	tComment.txt	/*tComment-commands*
 tComment.txt	tComment.txt	/*tComment.txt*
+tailminusf-about	tailminusf.txt	/*tailminusf-about*
+tailminusf-commands	tailminusf.txt	/*tailminusf-commands*
+tailminusf-configure	tailminusf.txt	/*tailminusf-configure*
 vba	pi_vimball.txt	/*vba*
 vimball	pi_vimball.txt	/*vimball*
 vimball-contents	pi_vimball.txt	/*vimball-contents*

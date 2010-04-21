@@ -41,6 +41,8 @@ set vb "makes visual bell instead of sound
 "to turn synthax color on
 "set term=builtin_beos-ansi
 
+filetype plugin indent on
+
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
 
