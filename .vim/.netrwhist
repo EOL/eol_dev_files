@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/Users/dimus/code/fengshui'
-let g:netrw_dirhist_2='/Users/dimus/code/fengshui/views'
-let g:netrw_dirhist_3='/Users/dimus/code/fengshui'
-let g:netrw_dirhist_4='/Users/dimus/code/fengshui/views'
-let g:netrw_dirhist_5='/Users/dimus/code/gni'
