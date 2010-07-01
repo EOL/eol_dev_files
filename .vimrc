@@ -44,6 +44,10 @@ set directory=~/tmp
 "to turn synthax color on
 "set term=builtin_beos-ansi
 
+ab #!! #!/usr/bin/ruby env
+
+
+
 filetype plugin indent on
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
@@ -51,7 +55,7 @@ filetype plugin indent on
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
-map vv v^g_
+map vv ^vg_
 nmap <unique> <Leader>s ysiW
 
 map R :!ruby % <cr>
