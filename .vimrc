@@ -15,6 +15,8 @@ set nocompatible	" Use Vim defaults (much better!)
 set bs=2		" allow backspacing over everything in insert mode
 set ai			" always set autoindenting on
 set nobackup		" keep a backup file
+"set backup
+"set backupdir=~/tmp
 set viminfo='20,\"50	" read/write a .viminfo file, don't store more
 			" than 50 lines of registers
 set history=50		" keep 50 lines of command line history
@@ -38,6 +40,7 @@ set incsearch
 
 "set keywordprg=/usr/bin/ispell "makes ispell a default spellchecker for kommand K
 set vb "makes visual bell instead of sound
+set directory=~/tmp
 "to turn synthax color on
 "set term=builtin_beos-ansi
 
@@ -48,7 +51,7 @@ filetype plugin indent on
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
-
+map vv v^g_
 nmap <unique> <Leader>s ysiW
 
 map R :!ruby % <cr>
