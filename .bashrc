@@ -98,6 +98,7 @@ IN="\[\033[0m\]"
 
 PS1='\[\033[01;34m\]\w\[\033[00m\]\$$IN '
 export PS1="$HI\u $HI\h $HI\w$HI $IN"
+export JEWELER_OPTS="--rspec --gemcutter --cucumber"
 
 if [ -f $HOME/.dir_colors ]; then
     export LS_OPTIONS='--color=auto'
@@ -108,4 +109,4 @@ if [ -f $HOME/.git_colors ]; then
   . $HOME/.git_colors
 fi
 
-#if [ -f ~/.rvm/bin/rvm ] ; then source ~/.rvm/bin/rvm ; fi
+if [[ -s /Users/dimus/.rvm/scripts/rvm ]] ; then source /Users/dimus/.rvm/scripts/rvm ; rvm 1.8.7 ; fi
