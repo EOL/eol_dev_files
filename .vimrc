@@ -44,8 +44,15 @@ set vb "makes visual bell instead of sound
 set directory=~/tmp
 "to turn synthax color on
 "set term=builtin_beos-ansi
+
+"ABBREVIATIONS
+
 ab #!! #!/usr/bin/env ruby<newline><newline>
 ab dbg require 'ruby-debug'; debugger
+
+
+
+
 filetype plugin indent on
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
