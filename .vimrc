@@ -8,13 +8,13 @@
 "  for MS-DOS and Win32:  $VIM\_vimrc
 
 
-set foldmethod=marker " define folder method as manual
+set foldmethod=marker " define fold method as manual
 set fileencodings=utf-8,default,latin1
-"set foldmethod=indent " define folder method as manual
+"set foldmethod=indent " define folder method by indentation
 set nocompatible	" Use Vim defaults (much better!)
-set bs=2		" allow backspacing over everything in insert mode
+set bs=indent,eol,start	" allow backspacing over everything in insert mode
 set ai			" always set autoindenting on
-set nobackup		" keep a backup file
+set nobackup		"do not keep a backup file
 "set backup
 "set backupdir=~/tmp
 set viminfo='20,\"50	" read/write a .viminfo file, don't store more
@@ -22,12 +22,11 @@ set viminfo='20,\"50	" read/write a .viminfo file, don't store more
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 
-set ts=2                " makes tabulation to work as 4 spaces
+set ts=2                " makes tabulation to work as 2 spaces
 set shiftwidth=2
 set expandtab
 set nohls "no highlits for search
 set wrap
-set nohls
 set nocin
 set smartindent
 set smarttab
@@ -37,11 +36,10 @@ set laststatus=2
 set ignorecase smartcase
 " set spell spelllang=en_us
 
-set incsearch
-
-"set keywordprg=/usr/bin/ispell "makes ispell a default spellchecker for kommand K
+set incsearch "search incrementally
 set vb "makes visual bell instead of sound
 set directory=~/tmp
+set complete=.,b,t,w
 "to turn synthax color on
 "set term=builtin_beos-ansi
 
@@ -49,9 +47,6 @@ set directory=~/tmp
 
 ab #!! #!/usr/bin/env ruby<newline><newline>
 ab dbg require 'ruby-debug'; debugger
-
-
-
 
 filetype plugin indent on
 
@@ -65,16 +60,13 @@ nmap <unique> <Leader>s ysiW
 
 map R :!ruby % <cr>
 map S :!spec % <cr>
-map } :tabn <cr>
-map { :tabp <cr>
+" map } :tabn <cr>
+" map { :tabp <cr>
 "map <silent> <Leader>P :Project<CR>
-"map L :!ispell % <cr>
-"map K :!ispell <cr>
 " Make p in Visual mode replace the selected text with the "" register.
 vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 
 " Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
   syntax on
   highlight Comment ctermfg=Blue
