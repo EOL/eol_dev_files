@@ -27,7 +27,7 @@ set shiftwidth=2
 set expandtab
 set nohls "no highlits for search
 set wrap
-set nocin
+set nocin "no indent c-style
 set smartindent
 set smarttab
 "shows encoding of the file
@@ -40,6 +40,17 @@ set incsearch "search incrementally
 set vb "makes visual bell instead of sound
 set directory=~/tmp
 set complete=.,b,t,w
+" codes to add to the autocomplete sequence
+" .      Current file 
+" b      Files in loaded buffers, not in a window 
+" d      Definitions in the current file and in files included by a #include directive 
+" i      Files included by the current file through the use of a #include directive 
+" k      The file defined by the ‘dictionary’ option (discussed later in this chapter) 
+" kfile  The file named {file} 
+" t      The “tags” file. (The ] character can be used as well.) 
+" u      Unloaded buffers 
+" w      Files in other windows
+
 "to turn synthax color on
 "set term=builtin_beos-ansi
 
@@ -91,6 +102,11 @@ if has("autocmd")
  autocmd User Rails Rnavcommand spf spec/fixtures -glob=**/* -suffix=.yml
  autocmd User Rails Rnavcommand cfg config -glob=**/* -suffix=.rb
 
+ augroup pyprog
+   au!
+   autocmd FileType * set ts=2 shiftwidth=2
+   autocmd FileType py set ts=4 shiftwidth=4
+ augroup END
 
  augroup cprog
   " Remove all cprog autocommands
