@@ -3,11 +3,8 @@ set guifont=Monaco:h18
 set mouse=a
 set lines=999 columns=999
 
-
-highlight Normal guibg=lightyellow
-set nohls
-
 color torte
 "color earendel
 "color murphy
-set nohls
+hi Folded guibg=white guifg=blue
+hi FoldColumn guibg=black guifg=white
