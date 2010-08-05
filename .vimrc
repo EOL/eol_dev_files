@@ -91,13 +91,13 @@
 
 " Folding {
 	set foldmethod=marker " define fold method as manual
-	set foldlevel=1
+	set foldlevel=0
 	hi Folded guibg=black guifg=green
 	hi FoldColumn guibg=black guifg=green
-  if has("autocmd")
-   autocmd FileType ruby setlocal foldmethod=syntax
-   autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
-  endif
+  " if has("autocmd")
+  "  autocmd FileType ruby setlocal foldmethod=syntax
+  "  autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
+  " endif
 " }
 
 " Mappings {
