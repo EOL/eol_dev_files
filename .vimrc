@@ -114,8 +114,8 @@
 
 " Rails {
   if has("autocmd")
-    autocmd FileType ruby setlocal foldmethod=syntax
-    autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
+    " autocmd FileType ruby setlocal foldmethod=syntax
+    " autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
     autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
     autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
     autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
