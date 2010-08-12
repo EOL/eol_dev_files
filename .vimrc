@@ -92,8 +92,8 @@
 " Folding {
 	set foldmethod=marker " define fold method as manual
 	set foldlevel=0
-	hi Folded guibg=black guifg=green
-	hi FoldColumn guibg=black guifg=green
+	" hi Folded guibg=black guifg=green
+	" hi FoldColumn guibg=black guifg=green
   " if has("autocmd")
   "  autocmd FileType ruby setlocal foldmethod=syntax
   "  autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
@@ -229,3 +229,11 @@
 
   endif " has("autocmd")
 " }
+
+" Colors {
+  " colorscheme desert
+  hi Comment  ctermfg=Cyan guifg=#80a0ff
+	hi Folded ctermbg=black ctermfg=green guibg=black guifg=green
+	hi FoldColumn guibg=black guifg=green
+" }
+
