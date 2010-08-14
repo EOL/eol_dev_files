@@ -92,8 +92,6 @@
 " Folding {
 	set foldmethod=marker " define fold method as manual
 	set foldlevel=0
-	" hi Folded guibg=black guifg=green
-	" hi FoldColumn guibg=black guifg=green
   " if has("autocmd")
   "  autocmd FileType ruby setlocal foldmethod=syntax
   "  autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
@@ -105,6 +103,13 @@
   map vv ^vg_ 
   map R :!ruby % <cr>
   map S :!spec % <cr>
+
+  " mapping these in insert mode is a bit problematic, let me know if it breaks your way!
+  imap <c-h> <left>
+  imap <c-j> <down>
+  imap <c-k> <up>
+  imap <c-l> <right>
+  inoremap jj <Esc>
 " }
 
 " Commands {
@@ -231,9 +236,10 @@
 " }
 
 " Colors {
-  " colorscheme desert
-  hi Comment  ctermfg=Cyan guifg=#80a0ff
-	hi Folded ctermbg=black ctermfg=green guibg=black guifg=green
+  "colorscheme eol_dark
+  hi Comment    term=NONE cterm=NONE ctermfg=Cyan
+  hi Constant   ctermfg=gray
+  hi String     ctermfg=green
+	hi Folded     ctermbg=black ctermfg=green guibg=black guifg=green
 	hi FoldColumn guibg=black guifg=green
 " }
-
