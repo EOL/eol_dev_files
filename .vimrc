@@ -28,7 +28,7 @@
 " }
 
 " Word Completion {
-	set complete=.,b,t,w
+	set complete=.,b,w,t
 	" codes to add to the autocomplete sequence
 	" .      Current file 
 	" b      Files in loaded buffers, not in a window 
@@ -44,6 +44,7 @@
 " }
 
 " General {
+  let mapleader=","
 	set nocompatible	  " Use Vim defaults (much better!)
 
 	set wrap
@@ -98,17 +99,17 @@
   " endif
 " }
 
+" Invisibles {
+  nmap <leader>l :set list!<CR>
+  set listchars=tab:▸\ ,eol:¬
+" }
+
 " Mappings {
   " visual select of a line without trailing spaces
   map vv ^vg_ 
   map R :!ruby % <cr>
   map S :!spec % <cr>
-
-  " mapping these in insert mode is a bit problematic, let me know if it breaks your way!
-  imap <c-h> <left>
-  imap <c-j> <down>
-  imap <c-k> <up>
-  imap <c-l> <right>
+  nmap <leader>v :tabedit $MYVIMRC<CR>
   inoremap jj <Esc>
 " }
 
@@ -242,4 +243,6 @@
   hi String     ctermfg=green
 	hi Folded     ctermbg=black ctermfg=green guibg=black guifg=green
 	hi FoldColumn guibg=black guifg=green
+  hi NonText    ctermfg=blue guifg=#4a4a59
+  hi SpecialKey ctermfg=blue guifg=#4a4a59
 " }
