@@ -1,5 +1,7 @@
-# #!/usr/bin/env ruby
+#!/usr/bin/env ruby
+# vim: set foldmethod=marker:
 
+#Added by EOL team
 snippet #u
 	# encoding: utf-8
 snippet #vu
@@ -14,7 +16,7 @@ snippet #!
 snippet =b
 	=begin rdoc
 		${1}
-	za=end
+	=end
 snippet y
 	:yields: ${1:arguments}
 snippet rb
@@ -489,7 +491,7 @@ snippet tra
 	transaction(${1:true}) { ${2} }
 # xmlread(..)
 snippet xml-
-	REXML::Document.new(File.read(${1:"path/to/file"}))${2}
+	Nokogiri::XML(File.read(${1:"path/to/file"}))${2}
 # xpath(..) { .. }
 snippet xpa
 	elements.each(${1:"//Xpath"}) do |${2:node}|

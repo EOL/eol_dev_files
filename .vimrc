@@ -1,6 +1,6 @@
 " vim: set foldmarker={,} foldlevel=0 foldmethod=marker ts=2 shiftwidth=2 spell:
 "  configuration file from Encyclopedia of Life team
-"	 based on .vimrc of Steve Francia.
+"  based on .vimrc of Steve Francia.
 "  To use it copy this file to
 "    for Unix and OS/2:  ~/.vimrc
 "    for MS-DOS and Win32:  $VIM\_vimrc
@@ -8,95 +8,99 @@
 
 " Setup Bundle Support {
 " The next two lines ensure that the ~/.vim/bundle/ system works
-	runtime! autoload/pathogen.vim
-	silent! call pathogen#runtime_append_all_bundles()
+  runtime! autoload/pathogen.vim
+  silent! call pathogen#runtime_append_all_bundles()
 " }
 
 " Matchit Macro {
 " Expands % character to move between not only matching () or {} but also def, if, while etc.
-	runtime macros/matchit.vim
+  runtime macros/matchit.vim
 " }
 
 " Tabs, Indentations {
-	set ts=2            " makes tabulation to work as 2 spaces
-	set shiftwidth=2	  " sets indentation 2 spaces
-	set ai			        " always set autoindenting on
-	set nocin "no indent c-style
-	set expandtab       " tabs from spaces use CTRL_V_TAB to insert real tab
-	set smartindent
-	set smarttab
+  set ts=2            " makes tabulation to work as 2 spaces
+  set softtabstop=2   
+  set shiftwidth=2    " sets indentation 2 spaces
+  set expandtab       " tabs from spaces use CTRL_V_TAB to insert real tab
+
+  set ai              " always set autoindenting on
+  set nocin "no indent c-style
+  set smartindent
+  set smarttab
 " }
 
 " Word Completion {
-	set complete=.,b,w,t
-	" codes to add to the autocomplete sequence
-	" .      Current file 
-	" b      Files in loaded buffers, not in a window 
-	" d      Definitions in the current file and in files included by a #include directive 
-	" i      Files included by the current file through the use of a #include directive 
-	" k      The file defined by the ‘dictionary’ option (discussed later in this chapter) 
-	" kfile  The file named {file} 
-	" t      The “tags” file. (The ] character can be used as well.) 
-	" u      Unloaded buffers 
-	" w      Files in other windows
-	set wildmenu " in command mode allows to see other options of completion
-	set wildmode=list:longest " in command mode bash-like completion to the unubigious part
+  set complete=.,w,b,u,t
+  " complete=.,w,b,u,t,i
+  " codes to add to the autocomplete sequence
+  " .      Current file 
+  " b      Files in loaded buffers, not in a window 
+  " d      Definitions in the current file and in files included by a #include directive 
+  " i      Files included by the current file through the use of a #include directive 
+  " k      The file defined by the ‘dictionary’ option (discussed later in this chapter) 
+  " kfile  The file named {file} 
+  " t      The “tags” file. (The ] character can be used as well.) 
+  " u      Unloaded buffers 
+  " w      Files in other windows
+  set wildmenu " in command mode allows to see other options of completion
+  set wildmode=list:longest " in command mode bash-like completion to the unubigious part
 " }
 
 " General {
   let mapleader=","
-	set nocompatible	  " Use Vim defaults (much better!)
+  set nocompatible    " Use Vim defaults (much better!)
+  
+  "wrapping
+  set wrap
+  set linebreak
+  set showbreak=…
 
-	set wrap
-	set fileencodings=utf-8,default,latin1
+  set fileencodings=utf-8,default,latin1
   set encoding=utf-8
   set termencoding=utf-8
-	set viminfo='20,\"50	" read/write a .viminfo file, don't store more
-				" than 50 lines of registers
-	set history=50		" keep 50 lines of command line history
-	set bs=indent,eol,start	" allow backspacing over everything in insert mode
-	set shortmess+=filmnrxoOtT     	" abbrev. of messages (avoids 'hit enter')
-	filetype plugin indent on  	" Automatically detect file types.
-	syntax on 					" syntax highlighting
-	set mouse=a					" automatically enable mouse usage
-	set vb "makes visual bell instead of sound
-	
-	" Setting up the directories {
-		" set backup 						" backups are nice ...
-		" set backupdir=$HOME/.vimbackup  " but not when they clog .
-		set nobackup		"backups are nice but not if files are huge
-		set directory=$HOME/.vimswap 	" Same for swap files
-		set viewdir=$HOME/.vimviews 	" same but for view files
-		
-		" Creating directories if they don't exist
-		" silent execute '!mkdir -p $HOME/.vimbackup'
-		silent execute '!mkdir -p $HOME/.vimswap'
-		silent execute '!mkdir -p $HOME/.vimviews'
-		" au BufWinLeave * silent! mkview  "make vim save view (state) (folds, cursor, etc)
-		" au BufWinEnter * silent! loadview "make vim load view (state) (folds, cursor, etc)
-	" }
+  set viminfo='20,\"50  " read/write a .viminfo file, don't store more
+        " than 50 lines of registers
+  set history=50    " keep 50 lines of command line history
+  set bs=indent,eol,start " allow backspacing over everything in insert mode
+  set hidden " removes warning when switching between buffers without saving them first
+  set shortmess+=filmnrxoOtT      " abbrev. of messages (avoids 'hit enter')
+  filetype plugin indent on   " Automatically detect file types.
+  syntax on           " syntax highlighting
+  set mouse=a         " automatically enable mouse usage
+  set vb "makes visual bell instead of sound
+  
+  " Setting up the directories {
+    " set backup            " backups are nice ...
+    " set backupdir=$HOME/.vimbackup  " but not when they clog .
+    set nobackup    "backups are nice but not if files are huge
+    set directory=$HOME/.vimswap  " Same for swap files
+    set viewdir=$HOME/.vimviews   " same but for view files
+    
+    " Creating directories if they don't exist
+    " silent execute '!mkdir -p $HOME/.vimbackup'
+    silent execute '!mkdir -p $HOME/.vimswap'
+    silent execute '!mkdir -p $HOME/.vimviews'
+    " au BufWinLeave * silent! mkview  "make vim save view (state) (folds, cursor, etc)
+    " au BufWinEnter * silent! loadview "make vim load view (state) (folds, cursor, etc)
+  " }
 " }
 
 " Status Bar {
-	set ruler		" show the cursor position all the time
-	"shows encoding of the file
-	set statusline=%<%f%h%m%r%=%b\ %{&encoding}\ 0x%B\ \ %l,%c%V\ %P
-	set laststatus=2
+  set ruler   " show the cursor position all the time
+  "shows encoding of the file
+  set statusline=%<%f%h%m%r%=%b\ %{&encoding}\ 0x%B\ \ %l,%c%V\ %P
+  set laststatus=2
 " }
 
 " Search {
-	set nohls "no highlits for search
-	set incsearch "search incrementally
-	set ignorecase smartcase " ignore case if only small case letters are in search pattern
+  set nohls "no highlits for search
+  set incsearch "search incrementally
+  set ignorecase smartcase " ignore case if only small case letters are in search pattern
 " }
 
 " Folding {
-	set foldmethod=marker " define fold method as manual
-	set foldlevel=0
-  " if has("autocmd")
-  "  autocmd FileType ruby setlocal foldmethod=syntax
-  "  autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
-  " endif
+  set foldmethod=marker " define fold method as manual
+  set foldlevel=0
 " }
 
 " Invisibles {
@@ -107,10 +111,20 @@
 " Mappings {
   " visual select of a line without trailing spaces
   map vv ^vg_ 
-  map R :!ruby % <cr>
-  map S :!spec % <cr>
-  nmap <leader>v :tabedit $MYVIMRC<CR>
+  " map R :!ruby % <cr>
+  " map S :!spec % <cr>
+  nmap <leader>v :sp $MYVIMRC<CR>
+  nmap <leader>s :tabedit ~/.vim/bundle/snipmate/snippets/ruby.snippets<CR>
+  " imap <M-h> <left>
+  " imap <M-j> <down>
+  " imap <M-k> <up>
+  " imap <M-l> <right>
   inoremap jj <Esc>
+  " current file edit dir
+  map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
+  map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
+  map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
+  map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 " }
 
 " Commands {
@@ -120,8 +134,6 @@
 
 " Rails {
   if has("autocmd")
-    " autocmd FileType ruby setlocal foldmethod=syntax
-    " autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
     autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
     autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
     autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
@@ -190,15 +202,15 @@
 
     " Enable editing of gzipped files
     " set binary mode before reading the file
-    autocmd BufReadPre,FileReadPre	*.gz,*.bz2 set bin
-    autocmd BufReadPost,FileReadPost	*.gz call GZIP_read("gunzip")
-    autocmd BufReadPost,FileReadPost	*.bz2 call GZIP_read("bunzip2")
-    autocmd BufWritePost,FileWritePost	*.gz call GZIP_write("gzip")
-    autocmd BufWritePost,FileWritePost	*.bz2 call GZIP_write("bzip2")
-    autocmd FileAppendPre			*.gz call GZIP_appre("gunzip")
-    autocmd FileAppendPre			*.bz2 call GZIP_appre("bunzip2")
-    autocmd FileAppendPost		*.gz call GZIP_write("gzip")
-    autocmd FileAppendPost		*.bz2 call GZIP_write("bzip2")
+    autocmd BufReadPre,FileReadPre  *.gz,*.bz2 set bin
+    autocmd BufReadPost,FileReadPost  *.gz call GZIP_read("gunzip")
+    autocmd BufReadPost,FileReadPost  *.bz2 call GZIP_read("bunzip2")
+    autocmd BufWritePost,FileWritePost  *.gz call GZIP_write("gzip")
+    autocmd BufWritePost,FileWritePost  *.bz2 call GZIP_write("bzip2")
+    autocmd FileAppendPre     *.gz call GZIP_appre("gunzip")
+    autocmd FileAppendPre     *.bz2 call GZIP_appre("bunzip2")
+    autocmd FileAppendPost    *.gz call GZIP_write("gzip")
+    autocmd FileAppendPost    *.bz2 call GZIP_write("bzip2")
 
     " After reading compressed file: Uncompress text in buffer with "cmd"
     fun! GZIP_read(cmd)
@@ -241,8 +253,8 @@
   hi Comment    term=NONE cterm=NONE ctermfg=Cyan
   hi Constant   ctermfg=gray
   hi String     ctermfg=green
-	hi Folded     ctermbg=black ctermfg=green guibg=black guifg=green
-	hi FoldColumn guibg=black guifg=green
+  hi Folded     ctermbg=black ctermfg=green guibg=black guifg=green
+  hi FoldColumn guibg=black guifg=green
   hi NonText    ctermfg=blue guifg=#4a4a59
   hi SpecialKey ctermfg=blue guifg=#4a4a59
 " }
