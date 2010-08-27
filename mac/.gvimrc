@@ -1,7 +1,7 @@
 " gvim settings
 set guifont=Monaco:h18
 set mouse=a
-set lines=999 columns=999
+" set lines=999 columns=999
 
 " color ir_black
 color torte
