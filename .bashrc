@@ -110,4 +110,4 @@ if [ -f $HOME/.git_colors ]; then
   . $HOME/.git_colors
 fi
 
-if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; rvm 1.8.7 ; fi
+if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; rvm default ; fi
