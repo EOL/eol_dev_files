@@ -89,6 +89,7 @@ export EC2_PRIVATE_KEY=/Users/dimus/ec2-keys/pk-VLVKTW2Y2Z7YRNJMQZ6DLORLLXPTPT7O
 export PATH=/opt/local/bin:/opt/local/sbin:$HOME/bin:/usr/local/bin:$PATH:$JRUBY_HOME/bin:$EC2_HOME/bin
 export MANPATH=/opt/local/share/man:$MANPATH
 export RUBYOPT="-rubygems"
+export GEM_OPEN_EDITOR="mvim"
 
 # Terminal colours (after installing GNU coreutils)
 NM="\[\033[0;38m\]" #means no background and white lines

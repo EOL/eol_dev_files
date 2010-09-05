@@ -1,7 +1,4 @@
-" vim: set foldmarker={,} foldlevel=0 foldmethod=marker ts=2 shiftwidth=2 spell:
-"  configuration file from Encyclopedia of Life team
-"  based on .vimrc of Steve Francia.
-"  To use it copy this file to
+" vim: set foldmarker={,} foldlevel=0 foldmethod=marker ts=2 shiftwidth=2 spell: "  configuration file from Encyclopedia of Life team "  based on .vimrc of Steve Francia.  "  To use it copy this file to
 "    for Unix and OS/2:  ~/.vimrc
 "    for MS-DOS and Win32:  $VIM\_vimrc
 "  za - unfold a fold, zR unfold all 
@@ -115,6 +112,10 @@
   " map S :!spec % <cr>
   nmap <leader>v :sp $MYVIMRC<CR>
   nmap <leader>s :tabedit ~/.vim/bundle/snipmate/snippets/ruby.snippets<CR>
+  nmap <S-j> <C-W><Down>
+  nmap <S-k> <C-W><Up>
+  nmap <S-l> <C-W><left>
+  nmap <S-h> <C-W><right>
   " imap <M-h> <left>
   " imap <M-j> <down>
   " imap <M-k> <up>
