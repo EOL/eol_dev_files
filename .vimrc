@@ -112,10 +112,10 @@
   " map S :!spec % <cr>
   nmap <leader>v :sp $MYVIMRC<CR>
   nmap <leader>s :tabedit ~/.vim/bundle/snipmate/snippets/ruby.snippets<CR>
-  nmap <S-j> <C-W><Down>
-  nmap <S-k> <C-W><Up>
-  nmap <S-l> <C-W><left>
-  nmap <S-h> <C-W><right>
+  nmap <C-j> <C-W><Down>
+  nmap <C-k> <C-W><Up>
+  nmap <C-l> <C-W><right>
+  nmap <C-h> <C-W><left>
   " imap <M-h> <left>
   " imap <M-j> <down>
   " imap <M-k> <up>
