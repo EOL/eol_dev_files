@@ -20,11 +20,12 @@
     added=yellow
     changed=green
     untracked=cyan
-    
+[merge]
+    tool=vimdiff
 [branch]
     autosetupmerge=true
 [alias]
     co=checkout
-    st=status
+    st=status -sb
     ci=commit
     br=branch
