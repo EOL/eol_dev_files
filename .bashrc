@@ -86,7 +86,8 @@ export EC2_PRIVATE_KEY=/Users/dimus/ec2-keys/pk-VLVKTW2Y2Z7YRNJMQZ6DLORLLXPTPT7O
 
 # MacPorts
 
-export PATH=/opt/local/bin:/opt/local/sbin:$HOME/bin:/usr/local/bin:$PATH:$JRUBY_HOME/bin:$EC2_HOME/bin
+# export PATH=/opt/local/bin:/opt/local/sbin:$HOME/bin:/usr/local/bin:$PATH:$JRUBY_HOME/bin:$EC2_HOME/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:$JRUBY_HOME/bin:$EC2_HOME/bin
 export MANPATH=/opt/local/share/man:$MANPATH
 export RUBYOPT="-rubygems"
 export GEM_OPEN_EDITOR="mvim"
@@ -102,10 +103,10 @@ PS1='\[\033[01;34m\]\w\[\033[00m\]\$$IN '
 export PS1="$HI\u $HI\h $HI\w$HI $IN"
 export JEWELER_OPTS="--rspec --gemcutter --cucumber"
 
-if [ -f $HOME/.dir_colors ]; then
-    export LS_OPTIONS='--color=auto'
-    eval `dircolors ~/.dir_colors`
-fi
+# fix colors for OS X
+export LSOPTIONS=" -G "
+export CLICOLOR=YES
+export LSCOLORS=dxfxcxdxbxegedabagacad
 
 if [ -f $HOME/.git_colors ]; then
   . $HOME/.git_colors
