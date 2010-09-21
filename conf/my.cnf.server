@@ -1,0 +1,59 @@
+[client]
+port                        = 3306
+default_character_set       = utf8
+socket                      = /data/mysql/var/mysql.sock
+character_set_client        = utf8
+[mysqld]
+datadir                     = /data/mysql/var
+tmpdir 			    = /data/mysql/tmp
+socket                      = /data/mysql/var/mysql.sock
+
+default_character_set       = utf8
+character_set_server        = utf8
+character_set_filesystem    = utf8
+character_set_client        = utf8
+init-connect                = "SET NAMES utf8"
+skip-character-set-client-handshake
+
+####################################
+# Changes made to optimize server  #
+####################################
+
+innodb_flush_method         = O_DIRECT
+innodb_buffer_pool_size     = 12G
+innodb_additional_mem_pool  = 200M
+innodb_log_file_size        = 1G
+innodb_lock_wait_timeout    = 500
+
+table_cache                 = 1500
+max_connections             = 1000
+
+query_cache_type            = 1
+query_cache_limit           = 1M
+query_cache_size            = 32M
+
+thread_cache_size           = 128
+max_allowed_packet          = 16M
+tmp_table_size              = 32M
+
+skip-name-resolve
+
+key_buffer_size             = 1G
+sort_buffer_size            = 4M
+myisam_sort_buffer_size     = 64M
+read_buffer_size            = 2M
+read_rnd_buffer_size        = 2M
+join_buffer                 = 2M
+
+max_connect_errors          = 10
+thread_concurrency          = 8
+####################################     
+[mysql]
+default-character-set       = utf8
+[mysql.server]
+user                        = mysql
+ft_min_word_len             = 2
+
+[mysqld_safe]
+err-log                     = /var/log/mysqld.log
+pid-file                    = /data/mysql/var/mysqld.pid
