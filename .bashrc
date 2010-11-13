@@ -80,6 +80,7 @@ fi
 export JRUBY_HOME=/usr/local/jruby
 export EC2_HOME=/usr/local/ec2-api-tools
 export SVN_EDITOR=vim
+export GEM_EDITOR=vim
 export LC_CTYPE=en_US.UTF-8
 export EC2_CERT=/Users/dimus/ec2-keys/cert-VLVKTW2Y2Z7YRNJMQZ6DLORLLXPTPT7O.pem
 export EC2_PRIVATE_KEY=/Users/dimus/ec2-keys/pk-VLVKTW2Y2Z7YRNJMQZ6DLORLLXPTPT7O.pem
