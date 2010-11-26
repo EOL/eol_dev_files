@@ -1,0 +1,3 @@
+#!/bin/sh
+sudo dpkg-reconfigure tzdata
+sudo ntpdate time.stonybrook.edu
