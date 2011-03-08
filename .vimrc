@@ -1,7 +1,7 @@
 " vim: set foldmarker={,} foldlevel=0 foldmethod=marker ts=2 shiftwidth=2 spell: "  configuration file from Encyclopedia of Life team "  based on .vimrc of Steve Francia.  "  To use it copy this file to
 "    for Unix and OS/2:  ~/.vimrc
 "    for MS-DOS and Win32:  $VIM\_vimrc
-"  za - unfold a fold, zR unfold all 
+"  za - unfold a fold, zR unfold all
 
 " Setup Bundle Support {
 " The next two lines ensure that the ~/.vim/bundle/ system works
@@ -16,7 +16,7 @@
 
 " Tabs, Indentations {
   set ts=2            " makes tabulation to work as 2 spaces
-  set softtabstop=2   
+  set softtabstop=2
   set shiftwidth=2    " sets indentation 2 spaces
   set expandtab       " tabs from spaces use CTRL_V_TAB to insert real tab
 
@@ -30,14 +30,14 @@
   set complete=.,w,b,u,t
   " complete=.,w,b,u,t,i
   " codes to add to the autocomplete sequence
-  " .      Current file 
-  " b      Files in loaded buffers, not in a window 
-  " d      Definitions in the current file and in files included by a #include directive 
-  " i      Files included by the current file through the use of a #include directive 
-  " k      The file defined by the ‘dictionary’ option (discussed later in this chapter) 
-  " kfile  The file named {file} 
-  " t      The “tags” file. (The ] character can be used as well.) 
-  " u      Unloaded buffers 
+  " .      Current file
+  " b      Files in loaded buffers, not in a window
+  " d      Definitions in the current file and in files included by a #include directive
+  " i      Files included by the current file through the use of a #include directive
+  " k      The file defined by the ‘dictionary’ option (discussed later in this chapter)
+  " kfile  The file named {file}
+  " t      The “tags” file. (The ] character can be used as well.)
+  " u      Unloaded buffers
   " w      Files in other windows
   set wildmenu " in command mode allows to see other options of completion
   set wildmode=list:longest " in command mode bash-like completion to the unubigious part
@@ -46,7 +46,7 @@
 " General {
   let mapleader=","
   set nocompatible    " Use Vim defaults (much better!)
-  
+
   "wrapping
   set wrap
   set linebreak
@@ -65,14 +65,14 @@
   syntax on           " syntax highlighting
   set mouse=a         " automatically enable mouse usage
   set vb "makes visual bell instead of sound
-  
+
   " Setting up the directories {
     " set backup            " backups are nice ...
     " set backupdir=$HOME/.vimbackup  " but not when they clog .
     set nobackup    "backups are nice but not if files are huge
     set directory=$HOME/.vimswap  " Same for swap files
     set viewdir=$HOME/.vimviews   " same but for view files
-    
+
     " Creating directories if they don't exist
     " silent execute '!mkdir -p $HOME/.vimbackup'
     silent execute '!mkdir -p $HOME/.vimswap'
@@ -107,7 +107,7 @@
 
 " Mappings {
   " visual select of a line without trailing spaces
-  map vv ^vg_ 
+  map vv ^vg_
   " map R :!ruby % <cr>
   " map S :!spec % <cr>
   nmap <leader>v :sp $MYVIMRC<CR>
@@ -148,6 +148,21 @@
   endif
 " }
 
+" Strip trailing whitespace {
+function! StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+autocmd BufWritePre * :call StripTrailingWhitespaces()
+" }
+
 " Rotate encoding {
   map <F8> :execute RotateEnc()<CR>
   map <F7> :let &fileencoding=&encoding<CR>
@@ -181,8 +196,18 @@
 
    augroup pyprog
      au!
-     autocmd FileType * set ts=2 shiftwidth=2
-     autocmd FileType py set ts=4 shiftwidth=4
+     autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+     autocmd BufRead *.py set tabstop=4
+     autocmd BufRead *.py set shiftwidth=4
+     autocmd BufRead *.py set smarttab
+     autocmd BufRead *.py set expandtab
+     autocmd BufRead *.py set softtabstop=4
+     autocmd BufRead *.py set autoindent
+     " autocmd BufRead *.py set foldlevel=1
+     " autocmd BufRead *.py set foldmethod=indent
+
+     " autocmd FileType * set ts=2 shiftwidth=2
+     " autocmd FileType py set ts=4 shiftwidth=4
    augroup END
 
    augroup cprog
