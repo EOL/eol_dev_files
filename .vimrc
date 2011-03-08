@@ -149,18 +149,14 @@
 " }
 
 " Strip trailing whitespace {
-function! StripTrailingWhitespaces()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    %s/\s\+$//e
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
-endfunction
-autocmd BufWritePre * :call StripTrailingWhitespaces()
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+autocmd BufWritePre * :%s/\s\+$//e
+"e flag supresses error messages
 " }
 
 " Rotate encoding {
@@ -283,4 +279,6 @@ autocmd BufWritePre * :call StripTrailingWhitespaces()
   hi FoldColumn guibg=black guifg=green
   hi NonText    ctermfg=blue guifg=#4a4a59
   hi SpecialKey ctermfg=blue guifg=#4a4a59
+  hi ExtraWhitespace ctermbg=red guibg=red
 " }
+

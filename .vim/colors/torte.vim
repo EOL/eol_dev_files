@@ -26,6 +26,7 @@ highlight Comment    guifg=#80a0ff
 highlight StatusLine guifg=blue		guibg=white
 highlight Statement  guifg=Yellow			gui=NONE
 highlight Type						gui=NONE
+highlight ExtraWhitespace guibg=red
 
 " Console
 highlight Normal     ctermfg=LightGrey	ctermbg=Black
@@ -37,6 +38,7 @@ highlight Comment    ctermfg=Blue
 highlight StatusLine ctermfg=blue	ctermbg=white
 highlight Statement  ctermfg=Yellow			cterm=NONE
 highlight Type						cterm=NONE
+highlight ExtraWhitespace ctermbg=red guibg=red
 
 " only for vim 5
 if has("unix")
