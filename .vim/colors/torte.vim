@@ -38,7 +38,7 @@ highlight Comment    ctermfg=Blue
 highlight StatusLine ctermfg=blue	ctermbg=white
 highlight Statement  ctermfg=Yellow			cterm=NONE
 highlight Type						cterm=NONE
-highlight ExtraWhitespace ctermbg=red guibg=red
+highlight ExtraWhitespace ctermbg=red
 
 " only for vim 5
 if has("unix")
