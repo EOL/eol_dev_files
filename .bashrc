@@ -91,6 +91,7 @@ export MANPATH=/opt/local/share/man:$MANPATH
 export CDPATH=.:~/code
 export RUBYOPT="-rubygems"
 export GEM_EDITOR="mvim"
+export NODE_PATH=/usr/local/lib/node_modules
 
 # Terminal colours (after installing GNU coreutils)
 NM="\[\033[0;38m\]" #means no background and white lines
@@ -101,7 +102,7 @@ IN="\[\033[0m\]"
 
 PS1='\[\033[01;34m\]\w\[\033[00m\]\$$IN '
 export PS1="$HI\u $HI\h $HI\w$HI $IN"
-export JEWELER_OPTS="--rspec --gemcutter --cucumber"
+export JEWELER_OPTS="--rspec --cucumber"
 
 
 # fix colors for OS X
