@@ -102,8 +102,6 @@ IN="\[\033[0m\]"
 PS1='\[\033[01;34m\]\w\[\033[00m\]\$$IN '
 export PS1="$HI\u $HI\h $HI\w$HI $IN"
 export JEWELER_OPTS="--rspec --gemcutter --cucumber"
-export PYTHONPATH="/Library/Frameworks/Python.framework/Versions/3.2/lib/python32.zip:/Library/Frameworks/Python.framework/Versions/3.2/lib/python3.2:/Library/Frameworks/Python.framework/Versions/3.2/lib/python3.2/plat-darwin:/Library/Frameworks/Python.framework/Versions/3.2/lib/python3.2/lib-dynload:/Library/Frameworks/Python.framework/Versions/3.2/lib/python3.2/site-packages"
-
 
 # fix colors for OS X
 export LSOPTIONS=" -G "
