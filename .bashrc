@@ -104,11 +104,11 @@ PS1='\[\033[01;34m\]\w\[\033[00m\]\$$IN '
 export PS1="$HI\u $HI\h $HI\w$HI $IN"
 export JEWELER_OPTS="--rspec --cucumber"
 
-
 # fix colors for OS X
 export LSOPTIONS=" -G "
 export CLICOLOR=YES
 export LSCOLORS=dxfxcxdxbxegedabagacad
+export NODE_PATH=/usr/local/lib/node_modules
 
 if [ -f $HOME/.git_colors ]; then
   . $HOME/.git_colors
