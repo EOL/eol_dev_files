@@ -82,6 +82,7 @@ export EC2_HOME=/usr/local/ec2-api-tools
 export SVN_EDITOR=vim
 export EDITOR=vim
 export LC_CTYPE=en_US.UTF-8
+export CPPFLAGS=-I/opt/X11/include
 
 # MacPorts
 
