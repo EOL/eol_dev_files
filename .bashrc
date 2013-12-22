@@ -116,3 +116,8 @@ if [ -f $HOME/.git_colors ]; then
 fi
 
 if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; rvm default ; fi
+
+#rbenv
+eval "$(rbenv init -)"
+export RBENV_ROOT=/usr/local/var/rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
