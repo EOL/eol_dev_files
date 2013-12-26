@@ -86,13 +86,13 @@ export CPPFLAGS=-I/opt/X11/include
 
 # MacPorts
 
-export PATH=/opt/local/bin:/opt/local/sbin:$HOME/bin:/usr/local/bin:$PATH:$JRUBY_HOME/bin:$EC2_HOME/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:$JRUBY_HOME/bin:$EC2_HOME/bin
 # export PATH=$HOME/bin:/usr/local/bin:$PATH:$JRUBY_HOME/bin:$EC2_HOME/bin
-export MANPATH=/opt/local/share/man:$MANPATH
 export CDPATH=.:~/code
 export RUBYOPT="-rubygems"
 export GEM_EDITOR="mvim"
 export NODE_PATH=/usr/local/lib/node_modules
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 # Terminal colours (after installing GNU coreutils)
 NM="\[\033[0;38m\]" #means no background and white lines
@@ -110,9 +110,14 @@ export LSOPTIONS=" -G "
 export CLICOLOR=YES
 export LSCOLORS=dxfxcxdxbxegedabagacad
 export NODE_PATH=/usr/local/lib/node_modules
+export JRUBY_HOME=/usr/local/var/rbenv/versions/jruby-1.7.8
 
 if [ -f $HOME/.git_colors ]; then
   . $HOME/.git_colors
 fi
 
-if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; rvm default ; fi
+#rbenv
+export RBENV_ROOT=/usr/local/var/rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+export PATH=./bin:$PATH

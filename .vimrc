@@ -24,6 +24,7 @@
   set nocin "no indent c-style
   set smartindent
   set smarttab
+  set colorcolumn=81
 " }
 
 " Word Completion {
@@ -131,6 +132,7 @@
 " Commands {
   " allows to save buffer with sudo
   command W w !sudo tee % >/dev/null
+  " autocmd BufWritePre *.rb :%s/\\s\\+$//e
 " }
 
 " Rails {
@@ -146,17 +148,6 @@
     autocmd User Rails Rnavcommand spf spec/fixtures -glob=**/* -suffix=.yml
     autocmd User Rails Rnavcommand cfg config -glob=**/* -suffix=.rb
   endif
-" }
-
-" Strip trailing whitespace {
-" highlight ExtraWhitespace ctermbg=red guibg=red
-" match ExtraWhitespace /\s\+$/
-" autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-" autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-" autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-" autocmd BufWinLeave * call clearmatches()
-" autocmd BufWritePre * :%s/\s\+$//e
-"e flag supresses error messages
 " }
 
 " Rotate encoding {
@@ -272,6 +263,9 @@
 
 " Colors {
   "colorscheme eol_dark
+  if &diff
+      colorscheme evening
+  endif
   hi Comment    term=NONE cterm=NONE ctermfg=Cyan
   hi Constant   ctermfg=gray
   hi String     ctermfg=green
@@ -282,3 +276,27 @@
   hi ExtraWhitespace ctermbg=red guibg=red
 " }
 
+" Diffs {
+" Disable one diff window during a three-way diff allowing you to cut out the
+" noise of a three-way diff and focus on just the changes between two versions
+" at a time. Inspired by Steve Losh's Splice
+function! DiffToggle(window)
+  " Save the cursor position and turn on diff for all windows
+  let l:save_cursor = getpos('.')
+  windo :diffthis
+  " Turn off diff for the specified window (but keep scrollbind) and move
+  " the cursor to the left-most diff window
+  exe a:window . "wincmd w"
+  diffoff
+  set scrollbind
+  set cursorbind
+  exe a:window . "wincmd " . (a:window == 1 ? "l" : "h")
+  " Update the diff and restore the cursor position
+  diffupdate
+  call setpos('.', l:save_cursor)
+endfunction
+" Toggle diff view on the left, center, or right windows
+nmap <silent> <leader>dl :call DiffToggle(1)<cr>
+nmap <silent> <leader>dc :call DiffToggle(2)<cr>
+nmap <silent> <leader>dr :call DiffToggle(3)<cr>
+" }

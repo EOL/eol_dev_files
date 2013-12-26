@@ -17,13 +17,6 @@ alias tm='open ~/tm/taxamatch.tmproj'
 alias e='open ~/tm/eol.tmproj'
 alias lev='open ~/tm/levenshtein_playground.tmproj'
 alias apache2ctl='sudo /opt/local/apache2/bin/apachectl'
-alias gb="git branch"
-alias gba="git branch -a"
-alias gc="git commit -v"
-alias gd="git diff | mate"
-alias gl="git pull"
-alias gp="git push"
-alias gst="git status"
 alias svim="screen -t vim 1 vim"
 alias sr="screen -r"
 alias sshg='ssh root@gniprod'
@@ -42,6 +35,11 @@ alias sp="./script/spec"
 alias 19='rvm 1.9.2-p290; echo "activating ruby 1.9.2"'
 alias 18='rvm 1.8.7;echo "activating ruby 1.8.7"'
 alias ctags="`brew --prefix`/bin/ctags"
+alias be="bundle exec"
+alias gm="git mergetool"
+alias gc="git clean -fd"
+alias grc="git rebase --continue"
+alias grs="git rebase --skip"
 
 if [ -f $HOME/.bash_aliases_local ]; then
   source $HOME/.bash_aliases_local

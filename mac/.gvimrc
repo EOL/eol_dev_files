@@ -1,7 +1,11 @@
 " gvim settings
-set guifont=Monaco:h18
+set guifont=Monaco:h17
 set mouse=a
 set lines=999 columns=999
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+set guioptions-=L
 " set fuoptions=maxhorz,maxvert,background:Normal
 " set fullscreen
 
